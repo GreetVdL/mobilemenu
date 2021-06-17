@@ -44,6 +44,7 @@ nav {
   #burger {
     display: none;
     font-size: 4rem;
+    cursor: pointer;
   }
   aside {
     font-size: 2.4rem;
@@ -128,11 +129,11 @@ header {
     left: 70vw;
     top: 100px;
     // display: none;
-    transform: translateX(-1000px);
-    transition: all 500ms;
+    transform: translateY(1300px);
+    transition: all 500ms ease-in;
     &.active {
       display: block;
-      transform: translateX(0);
+      transform: translateY(0);
     }
   }
   nav aside a {

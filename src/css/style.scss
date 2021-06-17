@@ -53,9 +53,10 @@ nav {
     width: 540px;
     a {
       display: block;
-      padding: 14px 33px;
+      padding: 14px 28px 8px 33px;
       border-radius: 40px;
       height: 100%;
+      border: 1px solid white;
       &:first-child,
       &:nth-child(2) {
         &:hover {
@@ -65,11 +66,14 @@ nav {
       &:last-child {
         width: 180px;
         border: 1px solid black;
-
+        position: relative;
         span {
           display: inline-block;
           font-size: 2rem;
           padding-left: 5px;
+          position: absolute;
+          top: 18px;
+          right: 34px;
         }
         &:hover {
           color: white !important;
@@ -88,6 +92,10 @@ header {
   transition: all 200ms;
   cursor: pointer;
   padding-top: 150px;
+  transition: all 400ms;
+  &.active {
+    padding-top: 240px;
+  }
   span:last-child {
     color: blue;
   }
@@ -126,22 +134,53 @@ header {
     @include make-col(1, 0px);
     position: absolute;
     width: 180px;
-    left: 70vw;
+    right: 10vw;
     top: 100px;
     // display: none;
-    transform: translateY(1300px);
-    transition: all 500ms ease-in;
+    transform: translateX(-1000%);
+    transition: all 300ms ease-in;
     &.active {
       display: block;
-      transform: translateY(0);
+      transform: translateX(0);
     }
   }
   nav aside a {
     margin-top: 1.4rem !important;
     border: 1px solid black;
-    &:hover {
-      color: blue !important;
-      border: 1px solid blue !important;
+    padding-bottom: 16px;
+    &:first-child,
+    &:nth-child(2) {
+      &:hover {
+        color: blue !important;
+        border: 1px solid blue !important;
+      }
     }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  header {
+    font-size: 9rem;
+    line-height: 14rem;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  header {
+    font-size: 6rem;
+    line-height: 9rem;
+    letter-spacing: 0rem;
+  }
+}
+
+@media screen and (max-width: 438px) {
+  header {
+    text-align: center;
+  }
+  body {
+    padding: 0 1.5rem 3rem 1.5rem;
+  }
+  #button {
+    margin: 7rem auto;
   }
 }

@@ -1,11 +1,11 @@
 {
-  "name": "bundlers",
+  "name": "mobilemenu",
   "scripts": {
     "start": "parcel serve ./src/index.html --open",
     "build": "npm run clean && parcel build ./src/index.html --dist-dir ./out --no-source-maps",
     "clean": "rm -rf ./.parcel-cache ./dist ./out",
     "serve": "live-server ./out",
-    "deploy": "surge ./out --domain https://PUT_YOUR_SURGE_DOMAIN_HERE"
+    "deploy": "surge ./out --domain https://mobilemenu.surge.sh"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",

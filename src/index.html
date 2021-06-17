@@ -10,17 +10,35 @@
   <body>
     <include src="./symbol-defs.svg"></include>
 
-    <div class="container">
+    <img
+      id="gradient"
+      src="https://uploads-ssl.webflow.com/60b0ad3e3cf853012e3248a9/60b7a83b73932220634775db_gradient%20peach%20straight.svg"
+      alt="some grdnt"
+    />
+    <div id="container">
       <nav>
         <section id="logo">acre</section>
+        <div id="burger">
+          <svg class="icon icon-menu">
+            <use xlink:href="#icon-menu"></use>
+          </svg>
+        </div>
         <aside>
           <a href="#">Careers</a>
           <a href="#">Contact</a>
-          <a href="#">Sign in</a>
+          <a href="#"
+            >Sign in<span>
+              <svg class="icon icon-arrow-thin-right">
+                <use xlink:href="#icon-arrow-thin-right"></use>
+              </svg>
+            </span>
+          </a>
         </aside>
       </nav>
-      <header>The mortgage advice journey, <span>simplified</span></header>
-      <a id="button" href="#/"></a>
+      <header>
+        <span>The mortgage advice journey, </span><span>simplified</span>
+      </header>
+      <a id="button" href="#/">Book a demo</a>
     </div>
 
     <script src="./js/index.js"></script>

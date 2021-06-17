@@ -8,12 +8,139 @@ html {
   font-size: 62.5%;
 }
 
-$oranje: orange;
 body {
-  margin: 10px;
+  min-height: 100vh;
+  font-family: "Space Grotesk", sans-serif;
+  background-color: $bgc;
+  padding: 0 3rem 3rem 3rem;
+  #gradient {
+    left: 8%;
+    width: 1200px;
+    -webkit-filter: blur(80px);
+    filter: blur(80px);
+    position: absolute;
+    z-index: 0;
+    width: 60%;
+    opacity: 0.3;
+  }
+  #container {
+    max-width: 1757px;
+    margin: 0 auto;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
 }
-h1 {
-  color: $oranje;
-  font-size: 30px;
-  margin: 50px 0;
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 58px;
+  #logo {
+    font-size: 4.4rem;
+    font-weight: 600;
+  }
+  #burger {
+    display: none;
+    font-size: 4rem;
+  }
+  aside {
+    font-size: 2.4rem;
+    @include make-col(3, 10px);
+    flex-wrap: nowrap;
+    width: 540px;
+    a {
+      display: block;
+      padding: 14px 33px;
+      border-radius: 40px;
+      height: 100%;
+      &:first-child,
+      &:nth-child(2) {
+        &:hover {
+          border: 1px solid black;
+        }
+      }
+      &:last-child {
+        width: 180px;
+        border: 1px solid black;
+
+        span {
+          display: inline-block;
+          font-size: 2rem;
+          padding-left: 5px;
+        }
+        &:hover {
+          color: white !important;
+          background-color: black;
+        }
+      }
+    }
+  }
+}
+
+header {
+  font-size: 14rem;
+  line-height: 16.8rem;
+  letter-spacing: -0.7rem;
+  font-weight: 600;
+  transition: all 200ms;
+  cursor: pointer;
+  padding-top: 150px;
+  span:last-child {
+    color: blue;
+  }
+  &::after {
+    content: "";
+    height: 1px;
+    background-color: black;
+    width: 100%;
+    display: block;
+    margin-top: 65px;
+  }
+}
+
+#button {
+  font-size: 4rem;
+  border-radius: 50px;
+  border: 1px solid black;
+  padding: 2.2rem 2.2rem;
+  display: block;
+  background-color: black;
+  color: white !important;
+  margin-top: 7rem;
+  margin-left: auto;
+  width: 300px;
+  &:hover {
+    background-color: blue;
+    border: 1px solid blue;
+  }
+}
+
+@media screen and (max-width: 848px) {
+  nav #burger {
+    display: block;
+  }
+  nav aside {
+    @include make-col(1, 0px);
+    position: absolute;
+    width: 180px;
+    left: 70vw;
+    top: 100px;
+    // display: none;
+    transform: translateX(-1000px);
+    transition: all 500ms;
+    &.active {
+      display: block;
+      transform: translateX(0);
+    }
+  }
+  nav aside a {
+    margin-top: 1.4rem !important;
+    border: 1px solid black;
+    &:hover {
+      color: blue !important;
+      border: 1px solid blue !important;
+    }
+  }
 }
